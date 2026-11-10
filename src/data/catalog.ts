@@ -125,7 +125,7 @@ export const featuredProjects: ProjectSummary[] = [
 
 export const statusLabel: Record<ContentStatus, string> = {
   planned: 'Planned',
-  draft: 'Draft',
+  draft: 'Lab guide',
   simulated: 'Simulated',
   validated: 'Validated',
 };

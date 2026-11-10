@@ -19,9 +19,9 @@ export interface LabMetaProps {
 const statusExplanation: Record<ContentStatus, string> = {
   planned: 'Scope agreed; content not yet written.',
   draft:
-    'Written and checked against the official references listed at the end. Not yet executed end-to-end in a lab tenant, so no execution evidence is published.',
+    'Lab guide: complete step-by-step instructions, checked against the official references listed at the end. Not yet executed end-to-end in a lab tenant, so no execution evidence is published yet.',
   simulated: 'Uses fictional organisations and data only. No real tenant is involved.',
-  validated: 'Executed in an isolated lab tenant; execution evidence is retained.',
+  validated: 'Executed end-to-end in an isolated test tenant. Redacted execution evidence is published in the Validation record section.',
 };
 
 export default function LabMeta(props: LabMetaProps): React.JSX.Element {

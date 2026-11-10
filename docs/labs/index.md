@@ -12,9 +12,9 @@ Each lab follows the same 15-section structure: objectives, difficulty, duration
 
 | ID | Lab | Difficulty | Status |
 |---|---|---|---|
-| LAB-001 | [Configure MFA in Microsoft Entra ID](./lab-001-entra-mfa.mdx) | Beginner | Draft |
-| LAB-002 | [Create and validate Conditional Access policies](./lab-002-conditional-access.mdx) | Intermediate | Draft |
-| LAB-003 | [Implement RBAC with administrative units](./lab-003-entra-rbac.mdx) | Intermediate | Draft |
+| LAB-001 | [Configure MFA in Microsoft Entra ID](./lab-001-entra-mfa.mdx) | Beginner | Lab guide |
+| LAB-002 | [Create and validate Conditional Access policies](./lab-002-conditional-access.mdx) | Intermediate | Lab guide |
+| LAB-003 | [Implement RBAC with administrative units](./lab-003-entra-rbac.mdx) | Intermediate | Lab guide |
 | LAB-004 | Simulate Joiner-Mover-Leaver lifecycle | Intermediate | Planned |
 | LAB-005 | Perform an access review | Intermediate | Planned |
 | LAB-006 | Analyse privileged access risks | Advanced | Planned |

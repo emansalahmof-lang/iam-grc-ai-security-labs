@@ -26,7 +26,7 @@ Every lab, project and case study carries one of four labels so readers always k
 | Label | Meaning |
 |---|---|
 | **Planned** | Scope agreed; content not yet written. |
-| **Draft** | Written and reviewed; not yet executed end-to-end. |
+| **Lab guide** | Complete step-by-step guide, checked against official documentation; not yet executed end-to-end in a tenant. |
 | **Simulated** | Uses fictional organisations and data; no real tenant involved. |
 | **Validated** | Executed in an isolated lab tenant, with execution evidence retained. |
 
