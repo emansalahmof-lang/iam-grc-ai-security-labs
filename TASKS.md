@@ -50,5 +50,11 @@ Legend: ✅ done · 🔄 in progress · ⏳ awaiting owner · ⬜ not started
 - ⏳ Owner items in OWNER_REVIEW.md
 - ⬜ Manual screen-reader pass (NVDA on Windows) — recommended
 
+## Phase 7 — GitHub deployment
+- ✅ Repository: github.com/emansalahmof-lang/iam-grc-ai-security-labs (public)
+- ✅ Pages source: GitHub Actions
+- ✅ First push 2026-11-10; CI and Deploy workflows succeeded
+- ✅ Live site verified: https://emansalahmof-lang.github.io/iam-grc-ai-security-labs/ (pages, downloads, search index, CSP, 14/14 diagrams on sampled pages, no console errors)
+
 ## Later phases · ⬜ Phase 5 interactive tools
 ⬜ Phase 7 GitHub Pages + Actions · ⬜ Phase 8 LinkedIn
