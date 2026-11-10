@@ -8,6 +8,8 @@ description: Catalogue of hands-on IAM, Entra ID, PAM, GRC and AI governance lab
 
 # Hands-On Labs
 
+New to the labs? Start with **[How to use the labs](./how-to-use.md)** — test tenant setup, evidence and validation.
+
 Each lab follows the same 15-section structure: objectives, difficulty, duration, prerequisites, tools and licences, architecture, safety, steps, expected results, validation, troubleshooting, cleanup, knowledge check and official references.
 
 | ID | Lab | Difficulty | Status |
