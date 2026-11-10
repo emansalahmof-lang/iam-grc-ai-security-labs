@@ -1,0 +1,4 @@
+Review ID,Campaign,Resource / application,Entitlement,User (fictional),Department,Manager / reviewer,Last sign-in,Account status,Justification on file,Decision (Keep / Remove / Modify),Reviewer comment,Decision date,Remediation ticket,Remediation completed date,Evidence reference
+AR-2026Q4-001,Q4 2026 Finance ERP,ERP (simulated),PO_APPROVE,Lab User One,Finance,Finance Manager,2026-10-30,Enabled,Yes,,,,,,
+AR-2026Q4-002,Q4 2026 Finance ERP,ERP (simulated),PAY_RELEASE,Lab User Two,Procurement,Procurement Manager,2026-06-02,Enabled,No,,,,,,
+AR-2026Q4-003,Q4 2026 Finance ERP,ERP (simulated),USER_ADMIN,Lab Contractor Three,IT,IT Manager,Never,Enabled,No,,,,,,

@@ -1,0 +1,7 @@
+Control ID,Control name,Theme,Applicable (Yes/No),Justification for inclusion or exclusion,Linked risks,Implementation status (Implemented / Partially / Planned / Not started),Control owner,Evidence reference,Last reviewed
+5.15,Access control,Organizational,Yes,Required to treat R-001 and contractual obligations,R-001,Partially,IAM Lead,POL-AC-01; CA policy export,
+5.19,Information security in supplier relationships,Organizational,Yes,Payroll and cloud providers process personal data,R-003,Planned,Procurement Manager,,
+6.3,"Information security awareness, education and training",People,Yes,Phishing risk; legal obligation to train staff,R-004,Implemented,Awareness Lead,Training completion report,
+7.4,Physical security monitoring,Physical,No,No company-operated premises in scope (fully hosted offices) - monitoring provided by landlord under contract,,Not applicable,Facilities Manager,Lease security schedule,
+8.5,Secure authentication,Technological,Yes,Treats R-001 and R-004,"R-001, R-004",Partially,IAM Lead,LAB-001 evidence pack,
+8.13,Information backup,Technological,Yes,Treats R-002 ransomware risk,R-002,Partially,IT Operations Manager,Backup restore test report,

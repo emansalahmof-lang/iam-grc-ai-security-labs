@@ -1,0 +1,42 @@
+---
+title: Portfolio
+description: Professional profile of Eman Ewais — cybersecurity, IAM, GRC and AI governance.
+---
+
+import {profile, credentialLabel} from '@site/src/data/profile';
+
+<div className="container margin-vert--xl">
+
+# Professional Portfolio
+
+{profile.intro}
+
+## Certifications
+
+<ul>
+  {profile.credentials.map((c) => (
+    <li key={c.code}><strong>{credentialLabel(c)}</strong> — {c.name}, {c.issuer}</li>
+  ))}
+</ul>
+
+## Areas of focus
+
+- Identity & Access Management and Microsoft Entra ID
+- Privileged Access Management and identity governance
+- Cybersecurity GRC — ISO/IEC 27001:2022, NIST CSF 2.0, Qatar NIA and PDPPL
+- IT governance and risk — COBIT 2019, ISO 31000
+- AI governance and security — ISO/IEC 42001, NIST AI RMF
+
+:::note[Pending owner approval]
+Professional experience, featured projects and a downloadable CV will be added here once the owner supplies and approves the wording.
+:::
+
+## Connect
+
+<ul>
+  {profile.links.map((l) => (
+    <li key={l.href}><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+  ))}
+</ul>
+
+</div>

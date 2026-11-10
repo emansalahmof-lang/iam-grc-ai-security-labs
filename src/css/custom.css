@@ -1,0 +1,101 @@
+/**
+ * Global theme tokens. Colours chosen for WCAG 2.2 AA contrast on their
+ * background in both modes (verify again in Phase 6 accessibility testing).
+ */
+:root {
+  --ifm-color-primary: #1d4ed8;
+  --ifm-color-primary-dark: #1a46c2;
+  --ifm-color-primary-darker: #1942b8;
+  --ifm-color-primary-darkest: #143697;
+  --ifm-color-primary-light: #2f5ee3;
+  --ifm-color-primary-lighter: #3a66e5;
+  --ifm-color-primary-lightest: #5b80ea;
+  --ifm-font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-monospace: 'Cascadia Code', Consolas, 'SFMono-Regular', Menlo, monospace;
+  --ifm-code-font-size: 92%;
+  --ifm-navbar-background-color: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(29, 78, 216, 0.1);
+
+  --site-surface: #ffffff;
+  --site-surface-alt: #f1f5fb;
+  --site-border: #d8e0ec;
+  --site-text-muted: #475569;
+  --site-status-planned: #64748b;
+  --site-status-draft: #b45309;
+  --site-status-simulated: #0e7490;
+  --site-status-validated: #15803d;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #4096f9;
+  --ifm-color-primary-darker: #308ef9;
+  --ifm-color-primary-darkest: #0775f2;
+  --ifm-color-primary-light: #80b4fb;
+  --ifm-color-primary-lighter: #90bcfb;
+  --ifm-color-primary-lightest: #c0d9fd;
+  --ifm-background-color: #0b1220;
+  --ifm-background-surface-color: #0f172a;
+  --ifm-navbar-background-color: #0b1220;
+  --ifm-footer-background-color: #070d18;
+  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.15);
+
+  --site-surface: #111b2e;
+  --site-surface-alt: #0f1828;
+  --site-border: #22314d;
+  --site-text-muted: #a3b2c8;
+  --site-status-planned: #94a3b8;
+  --site-status-draft: #fbbf24;
+  --site-status-simulated: #22d3ee;
+  --site-status-validated: #4ade80;
+}
+
+/* Respect users who reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.navbar__title {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* WCAG 1.4.1: links inside running text must not rely on colour alone */
+.markdown p a,
+.markdown li a,
+.markdown td a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+/* Search shortcut hint (Ctrl K) — raise contrast in light mode */
+.navbar kbd,
+.navbar [class*='searchHint'] kbd {
+  color: #334155;
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+[data-theme='dark'] .navbar kbd {
+  color: #e2e8f0;
+  border-color: #64748b;
+  background: #1e293b;
+}
+
+/* Mermaid edge labels in dark mode: readable text on a solid background */
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel,
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel p,
+[data-theme='dark'] .docusaurus-mermaid-container .labelBkg {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+/* Long button labels (e.g. template downloads) must wrap on small screens */
+.markdown a.button {
+  max-width: 100%;
+  white-space: normal;
+}

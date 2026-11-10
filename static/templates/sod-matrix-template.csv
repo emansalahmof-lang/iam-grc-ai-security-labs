@@ -1,0 +1,7 @@
+Rule ID,Process,Entitlement A,Entitlement B,Risk description,Risk level,Control type (Preventive / Detective),Mitigating control if accepted,Control owner,Exception approver,Review frequency
+SOD-01,Procure-to-pay,VENDOR_CREATE,PAY_RELEASE,Create a fictitious vendor and pay it,Critical,Preventive,Independent review of vendor master changes before first payment,Finance Controller,CFO,Quarterly
+SOD-02,Procure-to-pay,PO_CREATE,PO_APPROVE,Approve own purchase orders,High,Preventive,Workflow blocks self-approval; monthly self-approval report,Procurement Manager,CFO,Monthly
+SOD-03,Procure-to-pay,PO_CREATE,GR_POST,Order and confirm receipt of goods never delivered,High,Detective,Three-way match exceptions reviewed by finance,Finance Controller,CFO,Monthly
+SOD-04,Procure-to-pay,INV_POST,PAY_RELEASE,Post a false invoice and release payment,Critical,Preventive,Dual control on payment runs,Treasury Manager,CFO,Quarterly
+SOD-05,IT administration,USER_ADMIN,PAY_RELEASE,Grant self additional access and move money,Critical,Preventive,User administration separated from business roles; logged and reviewed,IAM Lead,CISO,Quarterly
+SOD-06,Procure-to-pay,VENDOR_CREATE,INV_POST,Create a vendor and post invoices against it,High,Detective,Call-back verification for vendor bank-detail changes,Finance Controller,CFO,Quarterly
