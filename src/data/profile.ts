@@ -28,10 +28,7 @@ export const profile = {
   intro:
     'Cybersecurity and GRC consultant based in Qatar. This portal turns governance frameworks and identity security concepts into documented, reproducible lab exercises — each one labelled honestly as planned, simulated, or executed.',
 
-  /**
-   * REVIEW BEFORE PUBLISHING: set CRISC to 'certified' only once the ISACA
-   * certificate has been issued. Until then the site shows "exam passed".
-   */
+  /** Credential status confirmed by the owner (CRISC confirmed certified 2026-11-10). */
   credentials: [
     {
       code: 'CISM',
@@ -43,7 +40,7 @@ export const profile = {
       code: 'CRISC',
       name: 'Certified in Risk and Information Systems Control',
       issuer: 'ISACA',
-      status: 'exam-passed-pending',
+      status: 'certified',
     },
   ] as Credential[],
 

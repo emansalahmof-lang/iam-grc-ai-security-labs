@@ -2,6 +2,11 @@
 
 All notable changes are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/).
 
+## [0.7.1] — 2026-11-10
+
+### Changed
+- CRISC shown as certified (confirmed by the owner).
+
 ## [0.7.0] — 2026-11-08 — Phase 7: GitHub deployment preparation
 
 ### Added
