@@ -79,7 +79,7 @@ export const featuredLabs: LabSummary[] = [
     difficulty: 'Beginner',
     duration: '45–60 min',
     prerequisites: 'Test tenant; Free (security defaults) or P1 (Conditional Access)',
-    status: 'draft',
+    status: 'validated',
     to: '/docs/labs/lab-001-entra-mfa',
   },
   {

@@ -27,3 +27,6 @@ OWNER_REVIEW.md
 *.pem
 *.key
 publish-log.txt
+
+# Raw (unredacted) lab evidence stays local; redacted copies live in static/img/evidence
+/evidence/

@@ -2,6 +2,13 @@
 
 All notable changes are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/).
 
+## [0.8.0] — 2026-11-10
+
+### Changed
+- LAB-001 **Validated** (Path A, Entra ID Free) — executed in a personal test tenant; redacted evidence and validation record published.
+- LAB-001 Path A expected results corrected after execution: security defaults prompt regular users for MFA only when necessary.
+- "Draft" lab status renamed to "Lab guide"; new "How to use the labs" page.
+
 ## [0.7.1] — 2026-11-10
 
 ### Changed

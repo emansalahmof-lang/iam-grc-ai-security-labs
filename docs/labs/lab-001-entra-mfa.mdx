@@ -6,13 +6,15 @@ description: "Hands-on lab: enforce multifactor authentication in Microsoft Entr
 keywords: [Microsoft Entra ID, MFA, Conditional Access, security defaults, authentication strength, passkeys, emergency access]
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # LAB-001 — Configure MFA in Microsoft Entra ID
 
 <LabMeta
   id="LAB-001"
   difficulty="Beginner"
   duration="45–60 minutes"
-  status="draft"
+  status="validated"
   licences={[
     'Path A — Microsoft Entra ID Free (security defaults)',
     'Path B — Microsoft Entra ID P1 or higher (Conditional Access)',
@@ -23,7 +25,7 @@ keywords: [Microsoft Entra ID, MFA, Conditional Access, security defaults, authe
     'A phone with Microsoft Authenticator, or a FIDO2 security key',
   ]}
   tools={['Microsoft Entra admin center', 'Microsoft Graph PowerShell (optional)', 'A private browser window']}
-  reviewed="2026-11-07"
+  reviewed="2026-11-10"
 />
 
 ## 1. Learning objectives
@@ -176,10 +178,17 @@ See section 10. Save the evidence (with tenant identifiers redacted) in your lab
 
 | Test | Expected outcome |
 |---|---|
-| `lab.user1` signs in after enforcement | Prompted for MFA; access granted after approval |
+| **Path A** — `lab.user1` first sign-in | Sign-in **interrupted**: the user must register an MFA method (no 14-day grace period since July 2024) |
+| **Path A** — later sign-ins by `lab.user1` | MFA **only when Microsoft judges it necessary** (location, device, role, task). A repeat sign-in from the same device can be single-factor — this is documented behaviour, not a failure |
+| **Path A** — administrators | MFA on **every** sign-in |
+| **Path B** — `lab.user1` signs in after enforcement | Prompted for MFA on every sign-in that `CA001` covers |
 | `lab.user2` (no method registered) signs in | Required to register a method before access |
 | Break-glass account signs in | `CA001` **Not applied**; passkey satisfies mandatory MFA |
-| Sign-in log for `lab.user1` | Authentication requirement: *Multifactor authentication*; `CA001` **Success** |
+| Sign-in log for `lab.user1` (Path B) | Authentication requirement: *Multifactor authentication*; `CA001` **Success** |
+
+:::info[Finding from validation]
+The first version of this guide expected `lab.user1` to be prompted for MFA on every sign-in under security defaults. Executing the lab showed — and Microsoft's documentation confirms — that security defaults prompt regular users **only when necessary**. If your requirement is *MFA on every sign-in for every user*, you need Conditional Access (Path B / LAB-002).
+:::
 
 ## 9. Validation procedures
 
@@ -307,10 +316,52 @@ These map to ISO/IEC 27001:2022 Annex A controls **5.17 Authentication informati
 - Microsoft Security Blog — [Passkeys are the default authentication method in Entra ID](https://www.microsoft.com/en-us/security/blog/2026/07/13/microsoft-entra-id-security-updates-passkeys-are-the-default-authentication-method-in-entra-id/) (13 July 2026)
 - NIST — [Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) (February 2024)
 
-## 15. Lab record
+## 15. Validation record
 
 | Field | Value |
 |---|---|
-| Content status | Lab guide — not yet executed end-to-end |
-| Execution evidence | None published |
-| Next review | Before marking *Validated*, or by 2027-02-01 (SMS/voice change) |
+| Content status | **Validated** — Path A (Microsoft Entra ID Free, security defaults) |
+| Executed | 10 November 2026, by Eman Ewais |
+| Environment | Personal test tenant (Entra ID Free), created for these labs; no production or employer data |
+| Path B (Conditional Access) | Not executed in this run — requires Entra ID P1; covered by LAB-002 |
+| Deviations from the guide | Emergency access accounts not created (Path A run; requires a FIDO2 key). The Path A expected results were corrected after execution (see the finding in section 8) |
+| Next review | By 2027-02-01 (Microsoft SMS/voice delivery change) |
+
+### Results
+
+| Check | Result |
+|---|---|
+| Security defaults enabled | ✅ "Your organization is protected by security defaults" |
+| Test users and pilot group created | ✅ `Lab User One`, `Lab User Two`, `GRP-MFA-Pilot` |
+| MFA registration enforced on first sign-in | ✅ First `lab.user1` sign-in **Interrupted** with authentication requirement *Multifactor authentication*; Microsoft Authenticator registered |
+| Registered method | ✅ Microsoft Authenticator (iPhone), default sign-in method *Microsoft Authenticator notification* |
+| Sign-in logs record each attempt | ✅ Interrupted → Success sequences recorded for `lab.user1` |
+
+### Evidence (redacted)
+
+Tenant name and IDs, domains, request IDs, IP addresses and the administrator's email are redacted.
+
+<details>
+<summary>1 · Security defaults enabled</summary>
+<img src={useBaseUrl('/img/evidence/lab-001/01-security-defaults.webp')} alt="Entra admin center tenant properties showing 'Your organization is protected by security defaults'" loading="lazy" width="900" height="1203" />
+</details>
+
+<details>
+<summary>2 · Test users created</summary>
+<img src={useBaseUrl('/img/evidence/lab-001/02-test-users.webp')} alt="Users list showing Lab User One and Lab User Two" loading="lazy" width="900" height="1238" />
+</details>
+
+<details>
+<summary>3 · Pilot group created</summary>
+<img src={useBaseUrl('/img/evidence/lab-001/03-pilot-group.webp')} alt="Groups list showing GRP-MFA-Pilot" loading="lazy" width="900" height="1222" />
+</details>
+
+<details>
+<summary>4 · Microsoft Authenticator registered for Lab User One</summary>
+<img src={useBaseUrl('/img/evidence/lab-001/04-authenticator-registered.webp')} alt="Lab User One authentication methods showing Microsoft Authenticator on iPhone" loading="lazy" width="900" height="1228" />
+</details>
+
+<details>
+<summary>5 · Sign-in logs</summary>
+<img src={useBaseUrl('/img/evidence/lab-001/05-signin-logs.webp')} alt="Sign-in log showing Interrupted then Success sign-ins for lab.user1" loading="lazy" width="1600" height="909" />
+</details>
