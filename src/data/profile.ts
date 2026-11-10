@@ -28,7 +28,7 @@ export const profile = {
   intro:
     'Cybersecurity and GRC consultant based in Qatar. This portal turns governance frameworks and identity security concepts into documented, reproducible lab exercises — each one labelled honestly as planned, simulated, or executed.',
 
-  /** Credential status confirmed by the owner (CRISC confirmed certified 2026-11-10). */
+  /** Credential status confirmed by the owner (CRISC and ECIH confirmed by the owner 2026-11-10). */
   credentials: [
     {
       code: 'CISM',
@@ -40,6 +40,12 @@ export const profile = {
       code: 'CRISC',
       name: 'Certified in Risk and Information Systems Control',
       issuer: 'ISACA',
+      status: 'certified',
+    },
+    {
+      code: 'ECIH',
+      name: 'EC-Council Certified Incident Handler',
+      issuer: 'EC-Council',
       status: 'certified',
     },
   ] as Credential[],

@@ -6,6 +6,7 @@ All notable changes are documented here. Format follows [Keep a Changelog](https
 
 ### Changed
 - CRISC shown as certified (confirmed by the owner).
+- Added EC-Council Certified Incident Handler (ECIH) (confirmed by the owner).
 
 ## [0.7.0] — 2026-11-08 — Phase 7: GitHub deployment preparation
 
